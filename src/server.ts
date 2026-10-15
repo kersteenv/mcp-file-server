@@ -499,6 +499,7 @@ const notAllowed = (_req: express.Request, res: express.Response) => {
 };
 app.get("/mcp", notAllowed);
 app.delete("/mcp", notAllowed);
+await fs.mkdir(ROOT, { recursive: true });
 
 app.listen(PORT, () => {
   console.log(`MCP file server listening on http://localhost:${PORT}/mcp`);
